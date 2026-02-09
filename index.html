@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Social Media Post</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <p class="badge">Social Search</p>
+        <h1>Encontre os últimos posts nas principais redes sociais</h1>
+        <p>
+          Forneça o nome da pessoa ou empresa, confirme a identidade e receba os
+          posts mais recentes em X (Twitter), Instagram, Facebook e outras redes.
+        </p>
+      </header>
+
+      <main class="content">
+        <section class="card">
+          <h2>1. Busca inicial</h2>
+          <form id="search-form" class="form">
+            <label for="query">Nome da pessoa ou empresa</label>
+            <div class="row">
+              <input
+                id="query"
+                name="query"
+                type="text"
+                placeholder="Ex.: OpenAI Brasil"
+                autocomplete="off"
+                required
+              />
+              <button type="submit">Buscar</button>
+            </div>
+          </form>
+          <div id="search-results" class="results hidden" aria-live="polite"></div>
+        </section>
+
+        <section class="card">
+          <h2>2. Confirmação da identidade</h2>
+          <div id="confirmation" class="confirmation muted">
+            <p>Realize a busca inicial para confirmar a identidade.</p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>3. Integrações e últimos posts</h2>
+          <p class="helper">
+            Para integrar com APIs reais, informe os identificadores de cada rede.
+            Os tokens ficam configurados no servidor (arquivo .env).
+          </p>
+          <div class="integration-grid">
+            <div class="integration-field">
+              <label for="x-handle">X (Twitter) · usuário</label>
+              <input id="x-handle" type="text" placeholder="ex.: openai" />
+            </div>
+            <div class="integration-field">
+              <label for="instagram-id">Instagram · user ID</label>
+              <input id="instagram-id" type="text" placeholder="ex.: 17841400000000000" />
+            </div>
+            <div class="integration-field">
+              <label for="facebook-id">Facebook · page ID</label>
+              <input id="facebook-id" type="text" placeholder="ex.: 1234567890" />
+            </div>
+            <div class="integration-field">
+              <label for="linkedin-id">LinkedIn · organization ID</label>
+              <input id="linkedin-id" type="text" placeholder="ex.: 1337" />
+            </div>
+          </div>
+          <div class="settings">
+            <label for="post-count">Quantidade de posts por rede</label>
+            <select id="post-count" name="post-count">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3" selected>3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button id="fetch-posts" type="button" disabled>
+            Buscar posts nas redes sociais
+          </button>
+          <div id="posts" class="posts" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

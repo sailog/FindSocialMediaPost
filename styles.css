@@ -1,0 +1,230 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #182233;
+  --muted: #5f6b7a;
+  --primary: #2f6bff;
+  --primary-dark: #244fcc;
+  --border: #d8e0ee;
+  --shadow: 0 20px 45px rgba(17, 25, 40, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 12px 0;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(47, 107, 255, 0.12);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.content {
+  display: grid;
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.form label,
+.settings label,
+.integration-field label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+input[type="text"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background: #a0b6ff;
+}
+
+.results,
+.posts {
+  margin-top: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+.result-item,
+.post-card {
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #fdfdff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.result-item h3,
+.post-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.result-meta,
+.post-meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.confirmation {
+  border-radius: 16px;
+  border: 1px dashed var(--border);
+  padding: 16px;
+}
+
+.confirmation.active {
+  border-style: solid;
+  background: #f3f6ff;
+}
+
+.confirmation button {
+  margin-top: 12px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.helper {
+  color: var(--muted);
+  margin-top: -8px;
+  margin-bottom: 20px;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 20px 0 16px;
+}
+
+select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  max-width: 160px;
+}
+
+.integration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.integration-field input {
+  width: 100%;
+}
+
+.network-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(47, 107, 255, 0.12);
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.error-banner {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #f3b6b6;
+  background: #fff3f3;
+  color: #8f1d1d;
+}
+
+@media (max-width: 720px) {
+  .row {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
